@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Welcome!",
             text: `Hello, ${data.user.name}!`,
             showConfirmButton: false,
-            timer: 1500,
+            timer: 2000,
           }).then(() => {
             window.location.href = "/dashboard";
           });
