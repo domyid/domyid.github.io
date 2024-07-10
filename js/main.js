@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           // Menyimpan token dalam cookie
           Cookies.set("login", data.token, {
-            expires: 1, // 1 day
+            expires: 0.75, // 18 hours
             sameSite: "Strict",
             secure: true,
             domain: "www.do.my.id",
