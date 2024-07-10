@@ -31,28 +31,46 @@ document.addEventListener('DOMContentLoaded', function() {
         const data = await res.json(); // Parse JSON response
 
         if (res.ok) {
-          // Save token to cookies
+          // Lakukan tindakan setelah login berhasil, misalnya menyimpan token atau mengalihkan halaman
           console.log(data);
+
+          // Menyimpan token dalam cookie
           Cookies.set("login", data.token, {
             expires: 1, // 1 day
             sameSite: "Strict",
             secure: true,
-            path: "/", // Ensure the path is set to root
+            domain: "www.do.my.id",
+            path: "/",
           });
 
-        //  Redirect to dashboard
-          window.location.href = "/dashboard"; // Ganti dengan URL dashboard Anda
+          // Menampilkan greeting menggunakan SweetAlert
+          Swal.fire({
+            icon: "success",
+            title: "Welcome!",
+            text: `Hello, ${data.user.name}!`,
+            showConfirmButton: false,
+            timer: 1500,
+          }).then(() => {
+            window.location.href = "/dashboard";
+          });
         } else {
           console.error("Login failed:", data.message);
-          alert("Login failed: " + data.message);
+          Swal.fire({
+            icon: "error",
+            title: "Login Failed",
+            text: data.message,
+          });
         }
       } catch (error) {
         console.error("Error handling credential response:", error);
-        alert(
-          "An error occurred while processing your login. Please try again."
-        );
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: "An error occurred while processing your login. Please try again.",
+        });
       }
     };
+
 
 });
 
