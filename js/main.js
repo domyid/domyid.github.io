@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
             expires: 0.75, // 18 hours
             sameSite: "Strict",
             secure: true,
-            domain: "www.do.my.id",
             path: "/",
           });
 
