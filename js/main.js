@@ -58,6 +58,8 @@
             icon: "error",
             title: "Login Failed",
             text: data.message,
+          }).then(() => {
+            window.location.href = "/signin";
           });
         }
       } catch (error) {
