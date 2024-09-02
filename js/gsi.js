@@ -30,8 +30,6 @@ async function gSignIn(response) {
 
 function responsePostFunction(response) {
     if (response.status === 200 && response.data) {
-        console.log(response.data);
-
         // Menyimpan token dalam cookie
         setCookieWithExpireHour("login", response.data.token, 18);
 
@@ -43,8 +41,7 @@ function responsePostFunction(response) {
             showConfirmButton: false,
             timer: 2000,
         }).then(() => {
-            console.log("munculin sweet alert");
-            //redirect("/dashboard");
+            redirect("/dashboard");
         });
     } else {
         console.error("Login failed:", response.data?.message || "Unknown error");
