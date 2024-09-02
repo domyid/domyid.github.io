@@ -11,7 +11,7 @@ window.handleCredentialResponse = gSignIn;
 async function gSignIn(response) {
     try {
         const gtoken = { token: response.credential };
-        await postJSON(target_url, "", "", gtoken, responsePostFunction);
+        await postJSON(target_url, "login", "", gtoken, responsePostFunction);
     } catch (error) {
         console.error("Network or JSON parsing error:", error);
         Swal.fire({
