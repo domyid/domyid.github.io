@@ -39,7 +39,8 @@ function responsePostFunction(response) {
             showConfirmButton: false,
             timer: 2000,
         }).then(() => {
-            redirect("/dashboard");
+            console.log("munculin sweet alert");
+            //redirect("/dashboard");
         });
     } else {
         console.error("Login failed:", response.data?.message || "Unknown error");
