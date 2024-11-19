@@ -1,5 +1,7 @@
 // Mengimpor modul dari CDN
-import * as FingerprintJS from 'https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js';
+//import * as FingerprintJS from 'https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js';
+import FingerprintJS from 'https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.esm.js';
+
 
 // Memuat FingerprintJS
 FingerprintJS.load()
