@@ -1,11 +1,8 @@
 // Mengimpor modul dari CDN
-import FingerprintJS from 'https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js';
+import * as FingerprintJS from 'https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js';
 
 // Memuat FingerprintJS
-const fpPromise = FingerprintJS.load();
-
-// Mendapatkan visitor ID
-fpPromise
+FingerprintJS.load()
     .then(fp => fp.get())
     .then(result => {
         const visitorId = result.visitorId;
